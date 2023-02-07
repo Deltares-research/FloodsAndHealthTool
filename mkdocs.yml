@@ -1,0 +1,25 @@
+site_name: FloodsAndHealthTool
+site_url: 
+site_description: Project documentation for FloodsAndHealthTool.
+site_author: Deltares
+
+repo_url: 
+edit_uri: blob/master/docs/
+
+theme:
+    name: mkdocs
+    locale: en
+    analytics: {gtag: 'G-274394082'}
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - django
+
+nav:
+    - Home: index.md
+    - Getting Started: 1_quick_start.md
+
+
+
+watch:
+    - mkdocs
