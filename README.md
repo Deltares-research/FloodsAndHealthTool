@@ -4,6 +4,8 @@
 
 A Python based tool to assess the impact of floods on human health.
 
+# Documentation
+[FloodsAndHealthTool docs](https://deltares.github.io/FloodsAndHealthTool/)
 
 ## Prerequisites
 
