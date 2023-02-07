@@ -5,21 +5,23 @@ site_author: Deltares
 
 repo_url: 
 edit_uri: blob/master/docs/
+### Site metadata ###
 
-theme:
-    name: mkdocs
-    locale: en
-    analytics: {gtag: 'G-274394082'}
-    highlightjs: true
-    hljs_languages:
-        - yaml
-        - django
+site_name: FloodsAndHealthTool
+site_description: A Python tool for flood impacts on human health
+site_url: https://https://deltares.github.io/FloodsAndHealthTool/
+
+repo_url: https://github.com/Deltares/FloodsAndHealthTool/
+edit_uri: edit/master/docs
+
+
+### Build settings ###
+
+theme: readthedocs
 
 nav:
-    - Home: index.md
-    - Getting Started: 1_quick_start.md
+  - Home: index.md
+  - Quick start: 1_quick_start.md
 
 
 
-watch:
-    - mkdocs
