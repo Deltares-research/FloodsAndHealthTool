@@ -1,0 +1,26 @@
+Author: M.P. Weeber
+Date : 08-02-2023
+
+Data links recieved from R. De Goede (SFINCS).
+Orginal data location Beira (with full Mozambique coast):
+p:\moonshot2flooding\1_sfincs\03_default_250m_test - Copy for health\
+
+Location with just Beira (city) data and export to tiffs:
+p:\moonshot2flooding\1_sfincs\vanKees\01_default\
+
+Coordinate system of files : WGS 84 / UTM zone 36S
+..map.nc and ..his.nc are unstructured UGRID format NetCDF output files from SFINCS.
+
+For accurate waterdepths, waterlevels need to be interpolated on the topobathy, found here:
+p:\moonshot2flooding\1_sfincs\03_default_250m_test\tiles\topobathy\14\topobathy.tiff
+
+Script to export data UGRID NetCDF as TIFF:
+p:\moonshot2flooding\1_sfincs\make_tiff_v4.py
+
+Observation points represented in .._his.nc file are listed in sfincs.obs.
+
+Tiff output of results per day can be found here:
+p:\moonshot2flooding\1_sfincs\vanKees\01_default\'
+Output taken over for tests:
+sfincs_flood_depth_2019-03-08T06 (no real flooding)
+sfincs_flood_depth_2019-03-15T06 (flooding) 
