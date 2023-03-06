@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import netCDF4 as nc
+
+# Open the netCDF file containing Hydromt output
+data = nc.Dataset('path/to/hydromt_output.nc')
+
+# Extract the water level and bathymetry data
+water_level = data.variables['water_level'][:]
+bathymetry = data.variables['bathymetry'][:]
+
+# Calculate the flood depth as the difference between water level and bathymetry
+flood_depth = water_level - bathymetry
+
+# Set the flood threshold (e.g. 0.5 meters) and find flooded cells
+flood_threshold = 0.5
+flooded_cells = np.where(flood_depth > flood_threshold)
+
+# Calculate the flood area as the number of flooded cells times the cell area
+cell_size = data.variables['cell_size'][:]
+flood_area = len(flooded_cells[0]) * cell_size[0] * cell_size[1]
+
+# Plot the flood depth as a color map
+plt.imshow(flood_depth)
+plt.colorbar(label='Flood depth (m)')
+
+# Add a contour line showing the flood threshold
+plt.contour(flood_depth, levels=[flood_threshold], colors='red', linewidths=2)
+
+# Show the flood area and flood depth
+print(f'Flood area: {flood_area} square meters')
+print(f'Flood depth: {np.max(flood_depth)} meters')
