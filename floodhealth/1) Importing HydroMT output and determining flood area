@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import netCDF4 as nc
 
-# Open the netCDF file containing Hydromt output
+# Open the netCDF (or other format) file containing Hydromt output
 data = nc.Dataset('path/to/hydromt_output.nc')
 
 # Extract the water level and bathymetry data
