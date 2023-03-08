@@ -1,0 +1,11 @@
+Regression model;Pathogen;Alpha;Beta;N50;r;;
+Beta Poisson;E.coli;0.2099;;1120;;ten Veldhuis;
+;Campylobacter;0.145;7.58;896;;ten Veldhuis;WHO
+;Rotavirus;0.2531;0.426;6.17;;ten Veldhuis;WHO
+;;;;;;;
+;;;;;;;
+Exponential;Cryptosporidium;;;;0.00419;ten Veldhuis;
+;Cryptosporidium;;;;0.004;ten Veldhuis;
+;;;;;0.059;WHO;
+;Giardia;;;;0.0199;ten Veldhuis;
+;Ascaris;;;;1;;

@@ -1,0 +1,13 @@
+Pathogen;Flood origin;Min conc;Max conc;Average conc;Unit;Source
+Campylobacter;Sewer;14;1000;;mpn/L;de Man et al (2014)
+Campylobacter;Sewer;2300;24000;;cfu/L;ten Veldhuis et al (2010)
+E.coli;Sewer and pluvial;10000;1000000;;mpn/ml;Mark et al (2018)
+E.coli;Sewer  ;8700;10800000;;cfu/100mL;ten Veldhuis et al (2010)
+E.coli;Fluvial with sewage inflow;;;18400;mpn/100ml;Nguyen et al (2016)
+Enterococci;Sewer and pluvial flooding;1000000;100000000;;/100mL;Mark et al (2018)
+Enterococci;Sewer  ;50000;370000;;cfu/100mL;ten Veldhuis et al (2010)
+Cryptosporidium;Fluvial with sewage inflow;0.1;1;;oocysts/L;Fewtrell et al (2011)
+Cryptosporidium;Sewer;10;15;;oocysts/L;ten Veldhuis et al (2010)
+Cryptosporidium;Sewer;0.1;10;;oocysts/L;de man et al (2014)
+Giardia;Sewer;0.1;142;;oocysts/L;de Man et al (2014)
+Norovirus;Sewer;100;10000;;pdu/L;de Man et al (2014)
