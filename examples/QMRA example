@@ -1,0 +1,34 @@
+#####QMRA example calculation
+
+import math
+
+# Define parameters for QMRA
+pathogen_name= "Campylobacter" #name of pathogen
+pathogen_concentration= 1000 #concentration in mpu/L in source water
+volume_exposure_adult= 10 #volume of ingestion in mL per exposure splashed pedestrian
+volume_exposure_child= 30 #volume of ingestion in mL per exposure child playing
+alpha_Campylobacter= 0.145 #alpha parameter for Campylobacter
+N50_Campylobacter= 896 #N50 for Campylobacter
+
+# Dose
+D_child= volume_exposure_child*pathogen_concentration/1000
+D_adult= volume_exposure_adult*pathogen_concentration/1000
+print("D_child is: {:.2E} mpu/L/event".format(D_child))
+print("D_adult is: {:.2E} mpu/L/event".format(D_adult))
+
+#Dose-Response Campylobacter (Beta Poisson)
+P_event_child= 1-(1+D_child/N50_Campylobacter*(2**(1/alpha_Campylobacter)-1))**(-alpha_Campylobacter)
+P_event_adult= 1-(1+D_adult/N50_Campylobacter*(2**(1/alpha_Campylobacter)-1))**(-alpha_Campylobacter)
+
+#Print risk of infection
+print("The probability of infection per event for children is: {:.2%}".format(P_event_child))
+print("The probability of infection per event for adults is: {:.2%}".format(P_event_adult))
+
+#Risk of infection per year
+n = 4 #number of exposure events per year
+
+P_inf_year_child= (1-(1-P_event_child)**n)
+P_inf_year_adult= (1-(1-P_event_adult)**n)
+
+print("P_inf_year_child is: {:.2%}".format(P_inf_year_child))
+print("P_inf_year_adult is: {:.2%}".format(P_inf_year_adult))
