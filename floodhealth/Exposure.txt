@@ -1,0 +1,3 @@
+# Exposure
+# if unknown, use nan, than average value will be used
+E.coli,10, 30, 30, 50, #Splashed adult;swimming adult;playing children; swimming children
