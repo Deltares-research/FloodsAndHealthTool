@@ -22,7 +22,7 @@ Switch to this environment and use `poetry` to restore the package dependencies.
 
 - Create `conda` environment
   ```sh
-  $ conda create -y -c conda-forge --name floodshealth poetry
+  $ conda create -y -c conda-forge --name floodshealth python=3.9 poetry 
   ```
   
 - Activate `conda` environment
