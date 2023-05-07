@@ -23,10 +23,10 @@ The following libraries are required for this script to run:
 -matplotlib.patches - for drawing shapes on plots
 
 How to use the script
-1.	First, ensure that all the required libraries are installed. These can be installed using pip install floodshealth.
+1.	First, ensure that all the required libraries are installed. These can be installed using the instructions below.
 2.	Download the GeoTIFF files for flood and population density data.
 3.	Update the values for pathogen, source, conc, and doseresp to reflect the specific pathogen, source, concentration, and dose response curve for the simulation.
-4.	Update the values for N50, NoE, and alpha to reflect the desired parameters for the Poisson distribution.
+4.	Update the values for N50, NoE, and alpha to reflect the desired parameters for the Poisson distribution for the dose-response relationship.
 5.	Load in the flood and population density data using tf.imread() function, and update the file path to match the location of the data on your local machine.
 6.	Create visualizations of the flood and population density data using imshow() and colorbar() functions.
 7.	Overlay the flood and population density data to create visualizations of the areas at risk of infection due to flooding.
