@@ -12,15 +12,15 @@ Dependencies
 
 The following libraries are required for this script to run:
 
-•	matplotlib - for visualizations
-•	tifffile - for reading in GeoTIFF files
-•	numpy - for numerical computing and array manipulation
-•	os - for accessing the file system
-•	netCDF4 - for reading in NetCDF files
-•	rasterio - for reading in raster files
-•	cartopy - for mapping
-•	matplotlib.colors.ListedColormap - for creating custom color maps
-•	matplotlib.patches - for drawing shapes on plots
+-matplotlib - for visualizations
+-tifffile - for reading in GeoTIFF files
+-numpy - for numerical computing and array manipulation
+-os - for accessing the file system
+-netCDF4 - for reading in NetCDF files
+-rasterio - for reading in raster files
+-cartopy - for mapping
+-matplotlib.colors.ListedColormap - for creating custom color maps
+-matplotlib.patches - for drawing shapes on plots
 
 How to use the script
 1.	First, ensure that all the required libraries are installed. These can be installed using pip install floodshealth.
