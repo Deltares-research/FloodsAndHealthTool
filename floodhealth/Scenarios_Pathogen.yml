@@ -1,0 +1,73 @@
+-- pathogen1: E.coli
+scenarios_ecoli:
+ - name: Scenario 1
+   min_conc: 1000
+   max_conc: 100000
+   source: Sewer_and_pluvial
+   units: MPN/ml
+
+ - name: Scenario 2
+   min_conc: 0
+   max_conc: 1840
+   source: Fluvial_and_sewerinflow
+   units: MPN/ml
+
+ - name: Scenario 3
+   min_conc: 870
+   max_conc: 1080000
+   source: Sewer
+   units: CFU/ml
+
+-- pathogen2: Campylobacter
+scenarios_camp:
+
+ - name: Scenario 1
+   min_conc: 0.014
+   max_conc: 1
+   source: Sewer
+   units: MPN/ml
+
+ - name: Scenario 2
+   min_conc: 23
+   max_conc: 240
+   source: Sewer
+   units: CFU/ml
+
+-- pathogen3: Enterococci
+scenarios_entero:
+
+ - name: Scenario 1
+   min_conc: 100000
+   max_conc: 1000000
+   source: Sewer_and_pluvial
+   units: CFU/ml
+
+ - name: Scenario 2
+   min_conc: 5000
+   max_conc: 37000
+   source: Sewer
+   units: CFU/ml
+
+-- pathogen4: Cryptosporidium
+scenarios_crypto:
+
+ - name: Scenario 1
+   min_conc: 10
+   max_conc: 15
+   source: Sewer
+   units: oocysts/L
+
+ - name: Scenario 2
+   min_conc: 0.1
+   max_conc: 10
+   source: Sewer
+   units: ooysts/L
+
+-- pathogen5: Giardia
+scenarios_giardia:
+
+ - name: Scenario 1
+   min_conc: 0.1
+   max_conc: 10000
+   source: Sewer
+   units: oocysts/L
