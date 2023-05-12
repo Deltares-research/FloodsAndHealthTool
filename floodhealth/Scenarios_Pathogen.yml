@@ -1,4 +1,4 @@
--- pathogen1: E.coli
+pathogen1: E.coli
 scenarios_ecoli:
  - name: Scenario 1
    min_conc: 1000
@@ -18,7 +18,7 @@ scenarios_ecoli:
    source: Sewer
    units: CFU/ml
 
--- pathogen2: Campylobacter
+pathogen2: Campylobacter
 scenarios_camp:
 
  - name: Scenario 1
@@ -33,7 +33,7 @@ scenarios_camp:
    source: Sewer
    units: CFU/ml
 
--- pathogen3: Enterococci
+pathogen3: Enterococci
 scenarios_entero:
 
  - name: Scenario 1
@@ -48,7 +48,7 @@ scenarios_entero:
    source: Sewer
    units: CFU/ml
 
--- pathogen4: Cryptosporidium
+pathogen4: Cryptosporidium
 scenarios_crypto:
 
  - name: Scenario 1
@@ -63,7 +63,7 @@ scenarios_crypto:
    source: Sewer
    units: ooysts/L
 
--- pathogen5: Giardia
+pathogen5: Giardia
 scenarios_giardia:
 
  - name: Scenario 1
