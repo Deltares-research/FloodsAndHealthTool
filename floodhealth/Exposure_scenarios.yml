@@ -1,25 +1,20 @@
--Exposure1: 
-  name: Splashed_adult
+-Splashed_Adult: 
   unit: ml/event
   conc: 10
 
--Exposure2: 
-  name: Wading adult
+-Wading_Adult:
   unit: ml/event
   conc: 10
 
--Exposure3: 
-  name: Swimming adult
+-Swimming_Adult: 
   unit: ml/h
   conc: 3.5
 
--Exposure4: 
-  name: Playing children
+-Playing_Children:  
   unit: ml/d
   conc: 30
 
--Exposure5: 
-  name: Swimming children
+-Swimming_Children: 
   unit: ml/h
   conc: 50
 
