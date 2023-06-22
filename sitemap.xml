@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://https://deltares.github.io/FloodsAndHealthTool/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://https:/deltares.github.io/FloodsAndHealthTool/1_quick_start%20-%20Copy/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <loc>https://https:/deltares.github.io/FloodsAndHealthTool/1_quick_start/</loc>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
