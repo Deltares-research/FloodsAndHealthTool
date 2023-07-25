@@ -1,0 +1,7 @@
+On this level 3 scripts:
+- the preprocessor for the Worldpop data
+- the preprocessor for the flood data
+- the actual tool, now just the QMRA part
+
+The folders represent different scenarios, in which the results of the two preprocessors are written. Also info of the run (what input & settings are used) should be available in each of the scenario folders.
+In the actual tool, checks should be present that checks on the existence of folder & whether there is output in that folder
