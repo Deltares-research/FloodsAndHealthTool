@@ -12,7 +12,7 @@ site_description: A Python tool for flood impacts on human health
 site_url: https://https://deltares.github.io/FloodsAndHealthTool/
 
 repo_url: https://github.com/Deltares/FloodsAndHealthTool/
-edit_uri: edit/master/docs
+edit_uri: blob/master/docs/ ###this was edit/master/docs before###
 
 
 ### Build settings ###
