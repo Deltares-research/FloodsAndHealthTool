@@ -21,9 +21,9 @@ theme: readthedocs
 
 nav:
   - Home: index.md
-  - Quick start: 1_quick_start.md
+  - Quick Start: 1_quick_start.md
   - Introduction: overview_floodshealth.md
-  
-
-
-
+  - Getting Started: 
+  - User Manual: 
+  - Input Parameters: 
+  - Output: 
