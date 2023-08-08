@@ -83,7 +83,7 @@ Calculation steps
 A Quantitative Microbial Risk Assessment (QMRA) typically involves several parameters that are used to estimate the risk of infection from exposure to microorganisms 
 in water or food. The four key steps and parameters are explained below. 
 
-1. 1.	Hazard – Pathogen concentrations (CPathogen_floodwater)
+1.	Hazard – Pathogen concentrations (CPathogen_floodwater)
 ----
 This parameter represents the target pathogen and its concentration of the microorganism in the water or food source. 
 It is typically estimated using laboratory analysis of water or food samples.
