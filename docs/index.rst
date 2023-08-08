@@ -4,6 +4,10 @@ Welcome to Floods and Health Tool documentation!
 ======================================
 
 ‘The Floods and Health Tool’ is Deltares’ new reduced-complexity model designed for super-fast modelling of infection risks after flooding. This online documentation describes the input files and parameters of the Floods and Health Tool, generated outputs and how to get started.
+
+.. figure:: ./figures/LogoFH.PNG
+   :width: 800px
+   :align: center
  
 **Contact:** 
 
