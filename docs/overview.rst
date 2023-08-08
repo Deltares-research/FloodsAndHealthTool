@@ -38,10 +38,6 @@ The model can be used to determine the number of persons that potentially will g
 
 What's behind the Floods and Health Tool? 
 -----
-
-Coastal model
-^^^^^
-
 The tool uses the flood maps produced by SFINCS and WFLOW as part of the HydroMT package and transforms it into the requested format for the health assessment.
 
 Ideally, the input data includes the severity (depth, area) and duration of the flood, 
