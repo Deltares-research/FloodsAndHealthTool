@@ -1,10 +1,10 @@
 Introduction
 =======
 
-Introduction to The Floods and Health Tool¶
+Introduction to The Floods and Health Tool
 ----------------------
 
-What is The Floods and Health Tool?¶
+What is The Floods and Health Tool?
 ^^^^^
 
 The Floods and Health tool is capable of simulating the infection risk of specific waterborne diseases in a population that is exposed to floodings. 
@@ -18,7 +18,7 @@ The infection risk and burden of disease are calculated using a Quantitative mic
 
    
 
-Why the Floods and Health Tool?¶
+Why the Floods and Health Tool?
 ^^^^^
 Floods can have significant effects on public health, which include direct injuries, destructed health infrastructures, mental health issues and the spread of water or vector-borne diseases. 
 These consequences on human well-being can be assessed by incorporating health impacts into flood modelling to allow a comprehensive risk assessment by understanding potential hazards, vulnerabilities and exposures. 
@@ -67,7 +67,7 @@ At the current state, the model:
 5. Visualizes the infection risk per exposure group (adult, children) in a map and bar chart with infection risk groups.
 
 
-QMRA (Quantitative Microbial Risk Assessment)?¶
+QMRA (Quantitative Microbial Risk Assessment)?
 ======================
 QMRA (Quantitative Microbial Risk Assessment) models are often used to estimate the risk of disease transmission through the consumption of contaminated food or water. 
 It is a risk assessment tool that estimates the risk of disease transmission from exposure to a specific dose of pathogens. 
