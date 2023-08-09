@@ -108,20 +108,15 @@ The main map output is in netcdf.
 
 	outputformat = net
 
-Output files **from sfincs**
+Output files 
 ^^^^^
 
 In case of netcdf output the map output will be named '', in case observation points are provided also a second file will be created with observation point output named ''.
 
 For more information about the variables saved to the netcdf output files, see the 'Output description' section.
 
-For binary or ascii files the output will be written to separate files, of which the named can be changed:
-
 .. code-block:: text
 
-	hmaxfile 	= hmax.dat
-	zsfile 		= zs.dat
-	vmaxfile 	= vmax.dat
 
 QMRA parameters
 -------------
@@ -211,12 +206,12 @@ Pathogen concentration as default in YML file for different scenario's based on 
         units: oocysts/L
 
 
-Êxposure Scenario's 
+Exposure Scenario's 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Exposure scenario's and ingested volumes are based on the flood depth and age of the population.
 
 .. figure:: ./figures/Exposurescenarios.png
-   :width: 800px
+   :width: 500px
    :align: center
 
 The default values for the ingested volumes are default values in a YML file based on literature.
