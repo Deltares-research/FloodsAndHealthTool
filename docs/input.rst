@@ -226,15 +226,15 @@ The default values for the ingested volumes are default values in a YML file bas
 	-Splashed_Adult: 
   	unit: ml/event
   	conc: 10
-
+	
 	-Wading_Adult:
  	unit: ml/event
   	conc: 10
-
+	
 	-Swimming_Adult: 
  	unit: ml/h
   	conc: 3.5
-
+	
 	-Playing_Children:  
  	unit: ml/d
   	conc: 30
@@ -242,7 +242,7 @@ The default values for the ingested volumes are default values in a YML file bas
 	-Swimming_Children: 
 	unit: ml/h
   	conc: 50
-
+	
 
 Dose-Response-Relationship 
 ^^^^^^^^^^^^^^^^^^^^^^^^
