@@ -188,7 +188,7 @@ Example Case Beira, Mozambique
 -------------------------------------------
 
 .. figure:: ./figures/Step2.png
-   :width: 600px
+   :width: 900px
    :align: center
 
 
@@ -196,12 +196,12 @@ Example Case Beira, Mozambique
 ----------------------------------------
 
 .. figure:: ./figures/Step3.png
-   :width: 900px
+   :width: 500px
    :align: center
 
 
 .. figure:: ./figures/InfRisk.png
-   :width: 900px
+   :width: 500px
    :align: center
 
       
