@@ -1,8 +1,5 @@
-User manual - general
+User manual - Step by Step
 =====
-
-Overview
------
 
 The Floods and Health tool uses flood maps produced by SFINCS and WFLOW as part of the HydroMT package and transforms it into the requested format for the health assessment (.netcdf).
 The input data includes the severity (depth, area), as well as demographic information about the affected population (age, social status, sex). 
@@ -15,76 +12,86 @@ For more information regarding specific parameters see the pages 'Input paramete
    :width: 800px
    :align: center
 
-   Overview of the data stream with input data, source and type, as well as potential nice-to-haves.¶
-	
-Example of floodshealth.inp **still from sfincs**
------
+   Overview of the data stream with input data, source and type, as well as potential nice-to-haves.
+
+
+.. figure:: ./figures/FloodDataFlow.png
+   :width: 800px
+   :align: center
+
+Pre-processing
+---------------
+
+Flood Data
+^^^^^^^^^^^^^^
+To pre-process the flood data, user defined settings can be adjusted to adjust the origin, coordinates for the bounding box and statistics of the flood map.
 
 .. code-block:: text
 
-	x0              = 0
-	y0              = 0	
-	mmax            = 100
-	nmax            = 100
-	dx              = 100
-	dy              = 100
-	rotation        = 0
-	
-	tref            = 20221116 000000
-	tstart          = 20221116 180000
-	tstop           = 20221116 235959
-	
-	depfile         = sfincs.dep
-	mskfile         = sfincs.msk
-	indexfile       = sfincs.ind
+	#### User defined settings ####
 
-	bndfile         = sfincs.bnd
-	bzsfile         = sfincs.bzs
-	spwfile         = sfincs.spw
-	srcfile         = sfincs.src
-	disfile         = sfincs.dis
+	# set scenario name
+	Fname = 'Scenario_1' 
 
-	advection	    = 0
-	alpha           = 0.75
-	huthresh	    = 0.05
-	manning         = 0.04	
-	theta 		    = 1.0
-	qinf            = 0.0
+	# select origin of flood map -> 1 = selected
+	Dhydro = 0
+	Sfincs = 1
 
-	dtout           = 3600
-	dtmaxout        = 86400	
-	dthisout        = 600
+	# set location of the original flood map
+	mapsDir = '../examples/'           # location of the original flood map
+	nameFM = 'sfincs_beira_map.nc'     # name of the original flood map
 
-	inputformat     = bin
-	outputformat    = net	
-	
-	obsfile         = sfincs.obs  	
+	# set bounding box
+	BB = 1 # 1 = bounding box, 0 = full map
 
-Domain
------
+	if BB == 1:
+   	 # set bounding box coordinates
+    	xmin = 0.66e6
+   	 xmax = 0.71e6
+    	ymin = 7.79e6
+    	ymax = 7.84e6
+  
+	# Set the required flood map stats for QMRA analysis 
+	FloodArea = 1
+	FloodMax  = 0
+	FloodDur  = 0
+	FloodNr   = 0
+
+	# if FloodArea = 1, choose the timestep, other options create a one time step output
+	timestep = 10
+
+
+Demographic data
+^^^^^^^^^^
+
+To use the population density data and age data from the WorldPop Database, the data needs to be merged and the population density data reprojected. Further, they are converted to netcdf format.
+
+.. code-block:: text
+	Preparation Steps for the Script: 
+
+	1. Download Age Data of the country of interest from https://hub.worldpop.org/geodata/listing?id=88 
+	2. Make two different folders for Children (0-10 years) and Adults (>10 years)
+	3. Download the Population density map of the country of interest from https://hub.worldpop.org/geodata/listing?id=76 
+
+	There should be two input folders (1. adults and 2. children) containing the different tif files of adult and children population and one single file 		with the overall population density. All files are in TIF format and will be converted to NETCDF ultimately.
 
 
 Grid characteristics
-^^^^^
-**from sfincs**
+-----------------
    
 .. code-block:: text
 	
-	e.g. in sfincs.inp:
 	
-	x0              = 0
-	y0              = 0	
-	mmax            = 250
-	nmax            = 150
-	dx              = 100
-	dy              = 100
-	rotation        = 45
 	
-
+	projection      = EPSG:4326 - WGS 84
+	y0              = 	
+	mmax            = 
+	nmax            = 
+	dx              = 
+	dy              = 
+	rotation        = 
 	
-Index file
-^^^^^
-
+	
 Input format 
 ^^^^^
 
@@ -104,7 +111,7 @@ The main map output is in netcdf.
 Output files **from sfincs**
 ^^^^^
 
-In case of netcdf output the map output will be named 'sfincs_map.nc', in case observation points are provided also a second file will be created with observation point output named 'sfincs_his.nc'.
+In case of netcdf output the map output will be named '', in case observation points are provided also a second file will be created with observation point output named ''.
 
 For more information about the variables saved to the netcdf output files, see the 'Output description' section.
 
@@ -116,69 +123,136 @@ For binary or ascii files the output will be written to separate files, of which
 	zsfile 		= zs.dat
 	vmaxfile 	= vmax.dat
 
-Numerical parameters **from sfincs**
-^^^^^
+QMRA parameters
+-------------
 
-**huthresh**
-
-'huthresh' is the flow depth limiter in SFINCS, by default set to 0.05 meters, controlling what minimal water depth should be exceeded to call a cell wet, and start calculating fluxes.
-It is recommended to use values within the range [0.001 <> 0.1].
-
-**alpha**
-
-'alpha' is the additional time step limiter besides the courant criteria.
-By default this is set to 0.75, in case model simulations become instable for some reason this value can be reduced.
-It is recommended to use values within the range [0.1 <> 0.75].
-
-**theta**
-
-'theta' sets the implicitness of the numerical scheme of SFINCS.
-The default value is 1.0 which is recommended for the regular version of SFINCS, however if more smoothing in you model result is needed because it might become unstable for some reason, you could set this to theta=0.9..
-
-**advection**
-
-'advection' sets what version of the advection term to use in the momentum equation, varying between the default of no advection at all (advection = 0), 1D advection terms (advection = 1) and full 2D advection terms (advection = 2).
-Generally it is only needed to turn on advection in case of modelling waves or super-critical flow.
+The user needs to define the desired pathogen, source, conc, dose-response relationship and values for the equation as indicated below.
 
 .. code-block:: text
 
-	huthresh 	= 0.05
-	alpha 		= 0.75
-	theta 		= 1.0
-	advection 	= 0
+	# User defined settings for pathogen and scenario selection
 
-**viscosity**
+	pathogen = 'E.coli' # select the pathogen for the simulation. Option at the moment is only 'E.coli'
+	source = 'Sewer_and_pluvial' #select the source of the pathogen. At the moment only 'Sewer_and_pluvial'
+	conc = 'max' #select the concentration of the pathogen: options are 'min' and 'max'
+	doseresp = 'poisson' #select the dose response curve of the pathogen for infection calculation. Either 'beta poisson' (keyword: 'poisson') or exponantial 	('exp', not yet included)
 
-'viscosity' turns on the viscosity term in the momentum equation (viscosity = 1).
-The recommended value of viscosity 'nuvisc' to add to your model (only advised to use when you set theta = 1.0), depends on your grid size.
-For ease, SFINCS internally automatically determines the optimal value for you, which is displayed when running the model:	'Turning on process: Viscosity, with nuvisc=   0.5000000'. In this example corresponding to a grid resolution of 50 meters.
-In case you would want to increase the viscosity term, you can either specify the exact value you want 'nuvisc = XXX', or e.g. multiply it by a factor 2: 	nuviscdim = 2.0 (default = 1.0, dimensionless).
-By default the value of nuvisc is determined like this:
+	#form values for poisson distribution
+	N50 = 896 #constant for the beta poisson infection risk calculation
+	NoE  = 4  #number of events per year 
+	alpha = 0.145 #form value for poisson distribution
 
-	dx = 50 > nuvisc = 0.5
-	
-        dx = 100 > nuvisc = 1.0
-	
-        dx = 500 > nuvisc = 5.0	
-	
-.. code-block:: text
+Pathogen concentration
+^^^^^^^^^^^^^^^^^^
 
-	viscosity 	= 1
-	nuviscdim 	= 1.0 (default)
-	nuvisc 		= XXX (automatically determined, or specify a value yourself that overrules this)
-	
-**Drag Coefficients:**
-
-The wind drag coefficients are varying with wind speed and implemented as in Delft3D. 
-The default values are based on Vatvani et al. (2012). 
-There is specified for how many points 'cd_nr' a velocity 'cd_wnd' and a drag coefficient 'cd_val' is specified, the following are the default values:
+Pathogen concentration as default in YML file for different scenario's based on literature values.
 
 .. code-block:: text
+	pathogens:
+  - name: E.coli
+    scenarios:
+      - name: Scenario 1
+        min_conc: 1000
+        max_conc: 100000
+        source: Sewer_and_pluvial
+        units: MPN/ml
+      - name: Scenario 2
+        min_conc: 0
+        max_conc: 1840
+        source: Fluvial_and_sewerinflow
+        units: MPN/ml
+      - name: Scenario 3
+        min_conc: 870
+        max_conc: 1080000
+        source: Sewer
+        units: CFU/ml
+  - name: Campylobacter
+    scenarios:
+      - name: Scenario 1
+        min_conc: 0.014
+        max_conc: 1
+        source: Sewer
+        units: MPN/ml
+      - name: Scenario 2
+        min_conc: 23
+        max_conc: 240
+        source: Sewer
+        units: CFU/ml
+  - name: Enterococci
+    scenarios:
+      - name: Scenario 1
+        min_conc: 100000
+        max_conc: 1000000
+        source: Sewer_and_pluvial
+        units: CFU/ml
+      - name: Scenario 2
+        min_conc: 5000
+        max_conc: 37000
+        source: Sewer
+        units: CFU/ml
+  - name: Cryptosporidium
+    scenarios:
+      - name: Scenario 1
+        min_conc: 10
+        max_conc: 15
+        source: Sewer
+        units: oocysts/L
+      - name: Scenario 2
+        min_conc: 0.1
+        max_conc: 10
+        source: Sewer
+        units: oocysts/L
+  - name: Giardia
+    scenarios:
+      - name: Scenario 1
+        min_conc: 0.1
+        max_conc: 10000
+        source: Sewer
+        units: oocysts/L
 
-	cd_nr 		= 3 
 
-	cd_wnd 		= 0 28 50 
+Êxposure Scenario's 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exposure scenario's and ingested volumes are based on the flood depth and age of the population.
 
-	cd_val 		= 0.0010 0.0025 0.0015 
+.. figure:: ./figures/Exposurescenarios.png
+   :width: 800px
+   :align: center
+
+The default values for the ingested volumes are default values in a YML file based on literature.
+
+.. code-block:: text
+	-Splashed_Adult: 
+  	unit: ml/event
+  	conc: 10
+
+	-Wading_Adult:
+ 	 unit: ml/event
+  	conc: 10
+
+	-Swimming_Adult: 
+ 	 unit: ml/h
+  	conc: 3.5
+
+	-Playing_Children:  
+ 	 unit: ml/d
+  	 conc: 30
+
+	-Swimming_Children: 
+	unit: ml/h
+  	conc: 50
+
+
+Dose-Response-Relationship 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Based on the specific pathogen, the user needs to choose the calculation method and the necessary parameter from literature
+
+.. figure:: ./figures/Exposurescenarios.png
+   :width: 800px
+   :align: center
+
+
+
 	
 
