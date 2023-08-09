@@ -248,7 +248,7 @@ Dose-Response-Relationship
 
 Based on the specific pathogen, the user needs to choose the calculation method and the necessary parameter from literature
 
-.. figure:: ./figures/Exposurescenarios.png
+.. figure:: ./figures/DoseResponse.PNG
    :width: 800px
    :align: center
 
