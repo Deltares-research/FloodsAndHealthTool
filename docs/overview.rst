@@ -10,7 +10,7 @@ The aim of the tool is to show the distribution of the population in areas affec
 The infection risk and burden of disease are calculated using a Quantitative microbial risk assessment (QMRA) approach. 
 
 .. figure:: ./figures/WorkflowFloodshealth.jpg
-   :width: 600px
+   :width: 800px
    :align: center
 
 
@@ -45,7 +45,7 @@ as well as demographic information about the affected population (age, social st
 
 
 .. figure:: ./figures/DataStreamFloodsandHealth.jpg
-   :width: 600px
+   :width: 800px
    :align: center
 
    Floods and Health Tool workflow.
@@ -74,7 +74,7 @@ In the context of food and water, QMRA can be used to estimate the number of peo
 QMRA can be used to estimate the number of people who will become ill (Daniels et al., 2018). 
 
 .. figure:: ./figures/QMRA_model.jpg
-   :width: 600px
+   :width: 800px
    :align: center
 
 
@@ -151,7 +151,7 @@ The calculation methods are dependent on the investigated pathogen and are based
 and Beta-Poisson models (pathogens that influence each other’s survival rate, such as most bacteria) (Sterk et al., 2008, see Table below).  
 
 .. figure:: ./figures/DoseResponse.PNG
-   :width: 600px
+   :width: 800px
    :align: center
 
 
@@ -179,7 +179,7 @@ Example Case Beira, Mozambique
 ------------------------------------------------
 
 .. figure:: ./figures/Step1.png
-   :width: 600px
+   :width: 800px
    :align: center
 
 
@@ -196,12 +196,12 @@ Example Case Beira, Mozambique
 ----------------------------------------
 
 .. figure:: ./figures/Step3.png
-   :width: 600px
+   :width: 800px
    :align: center
 
 
 .. figure:: ./figures/InfRisk.png
-   :width: 600px
+   :width: 800px
    :align: center
 
       
