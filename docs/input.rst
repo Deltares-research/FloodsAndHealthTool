@@ -143,63 +143,68 @@ Pathogen concentration
 Pathogen concentration as default in YML file for different scenario's based on literature values.
 
 .. code-block:: text
+
 	pathogens:
-  - name: E.coli
-    scenarios:
-      - name: Scenario 1
+  	- name: E.coli
+	scenarios:
+      	- name: Scenario 1
         min_conc: 1000
         max_conc: 100000
         source: Sewer_and_pluvial
         units: MPN/ml
-      - name: Scenario 2
+     	- name: Scenario 2
         min_conc: 0
         max_conc: 1840
         source: Fluvial_and_sewerinflow
         units: MPN/ml
-      - name: Scenario 3
+      	- name: Scenario 3
         min_conc: 870
         max_conc: 1080000
         source: Sewer
         units: CFU/ml
-  - name: Campylobacter
-    scenarios:
-      - name: Scenario 1
+
+	- name: Campylobacter
+    	scenarios:
+      	- name: Scenario 1
         min_conc: 0.014
         max_conc: 1
         source: Sewer
         units: MPN/ml
-      - name: Scenario 2
+      	- name: Scenario 2
         min_conc: 23
         max_conc: 240
         source: Sewer
         units: CFU/ml
-  - name: Enterococci
-    scenarios:
-      - name: Scenario 1
+
+  	- name: Enterococci
+   	scenarios:
+      	- name: Scenario 1
         min_conc: 100000
         max_conc: 1000000
         source: Sewer_and_pluvial
         units: CFU/ml
-      - name: Scenario 2
+      	- name: Scenario 2
         min_conc: 5000
         max_conc: 37000
         source: Sewer
         units: CFU/ml
-  - name: Cryptosporidium
-    scenarios:
-      - name: Scenario 1
+
+  	- name: Cryptosporidium
+    	scenarios:
+      	- name: Scenario 1
         min_conc: 10
         max_conc: 15
         source: Sewer
         units: oocysts/L
-      - name: Scenario 2
+      	- name: Scenario 2
         min_conc: 0.1
         max_conc: 10
         source: Sewer
         units: oocysts/L
-  - name: Giardia
-    scenarios:
-      - name: Scenario 1
+
+  	- name: Giardia
+    	scenarios:
+      	- name: Scenario 1
         min_conc: 0.1
         max_conc: 10000
         source: Sewer
@@ -222,16 +227,16 @@ The default values for the ingested volumes are default values in a YML file bas
   	conc: 10
 
 	-Wading_Adult:
- 	 unit: ml/event
+ 	unit: ml/event
   	conc: 10
 
 	-Swimming_Adult: 
- 	 unit: ml/h
+ 	unit: ml/h
   	conc: 3.5
 
 	-Playing_Children:  
- 	 unit: ml/d
-  	 conc: 30
+ 	unit: ml/d
+  	conc: 30
 
 	-Swimming_Children: 
 	unit: ml/h
