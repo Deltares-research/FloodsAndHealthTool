@@ -74,7 +74,7 @@ To use the population density data and age data from the WorldPop Database, the 
 	2. Make two different folders for Children (0-10 years) and Adults (>10 years)
 	3. Download the Population density map of the country of interest from https://hub.worldpop.org/geodata/listing?id=76 
 	
-	There should be two input folders (1. adults and 2. children) containing the different tif files of adult and children population and one single file 		with the overall population density. 
+	There should be two input folders (1. adults and 2. children) containing the different tif files of adult and children population and one single file with the overall population density.
 	
 	All files are in TIF format and will be converted to NETCDF ultimately.
 
