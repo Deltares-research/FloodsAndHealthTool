@@ -67,14 +67,14 @@ Demographic data
 To use the population density data and age data from the WorldPop Database, the data needs to be merged and the population density data reprojected. Further, they are converted to netcdf format.
 
 .. code-block:: text
-
 	Preparation Steps for the Script: 
-
+	
 	1. Download Age Data of the country of interest from https://hub.worldpop.org/geodata/listing?id=88 
 	2. Make two different folders for Children (0-10 years) and Adults (>10 years)
 	3. Download the Population density map of the country of interest from https://hub.worldpop.org/geodata/listing?id=76 
-
+	
 	There should be two input folders (1. adults and 2. children) containing the different tif files of adult and children population and one single file 		with the overall population density. All files are in TIF format and will be converted to NETCDF ultimately.
+
 
 
 Grid characteristics
