@@ -1,10 +1,10 @@
 User manual - Step by Step
 =====
 
-The Floods and Health tool uses flood maps produced by SFINCS and WFLOW as part of the HydroMT package and transforms it into the requested format for the health assessment (.netcdf).
-The input data includes the severity (depth, area), as well as demographic information about the affected population (age, social status, sex). 
-Additionally, concentrations of different pathogens in floodwater (E.coli, V. cholerae, Cryptosporidium) and exposure scenario’s of adults and children are provided in two separate YAML files. 
-These files can be configurated to adjust the pathogen concentrations or ingested volumes per exposure group. 
+The Floods and Health tool uses flood maps produced by SFINCS and WFLOW as part of the HydroMT package, as well as demographic data from the WorldPop Database (https://hub.worldpop.org/) and transforms them into the requested format for the health assessment (.netcdf).
+The input data includes the severity (depth, area), as well as demographic information about the affected population (population density, age(adults, children)). 
+Additionally, concentrations of different pathogens in floodwater (E.coli, V.cholerae, Cryptosporidium spp.) and exposure scenario’s of adults and children are provided in two separate YAML files. 
+These files can be configurated by the user to adjust the pathogen concentrations or ingested volumes per exposure group. 
 
 For more information regarding specific parameters see the pages 'Input parameters' or 'Output parameters'.
 
@@ -19,12 +19,13 @@ For more information regarding specific parameters see the pages 'Input paramete
    :width: 800px
    :align: center
 
+
 Pre-processing
 ---------------
 
 Flood Data
 ^^^^^^^^^^^^^^
-To pre-process the flood data, user defined settings can be adjusted to adjust the origin, coordinates for the bounding box and statistics of the flood map.
+To pre-process the flood data, user defined settings can be adjusted to define the origin, coordinates for the bounding box and statistics of the flood map.
 
 .. code-block:: text
 
@@ -74,7 +75,8 @@ To use the population density data and age data from the WorldPop Database, the 
 	2. Make two different folders for Children (0-10 years) and Adults (>10 years)
 	3. Download the Population density map of the country of interest from https://hub.worldpop.org/geodata/listing?id=76 
 	
-	There should be two input folders (1. adults and 2. children) containing the different tif files of adult and children population and one single file with the overall population density.
+	There should be two input folders (1. adults and 2. children) containing the different tif files of adult and children population and one single file 	 
+        with the overall population density.
 	
 	All files are in TIF format and will be converted to NETCDF ultimately.
 
@@ -101,7 +103,7 @@ Input format
 
 .. code-block:: text
 
-	inputformat = net
+	inputformat main script = net
 
 Output format
 ^^^^^
@@ -125,7 +127,7 @@ For more information about the variables saved to the netcdf output files, see t
 QMRA parameters
 -------------
 
-The user needs to define the desired pathogen, source, conc, dose-response relationship and values for the equation as indicated below.
+The user needs to define the desired pathogen, source, concentration, dose-response relationship and values for the equation as indicated below. 
 
 .. code-block:: text
 
@@ -144,7 +146,7 @@ The user needs to define the desired pathogen, source, conc, dose-response relat
 Pathogen concentration
 ^^^^^^^^^^^^^^^^^^
 
-Pathogen concentration as default in YML file for different scenario's based on literature values.
+Pathogen concentrations are available as default in YML file for different scenario's based on literature values.
 
 .. code-block:: text
 
@@ -251,13 +253,16 @@ The default values for the ingested volumes are default values in a YML file bas
 Dose-Response-Relationship 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Based on the specific pathogen, the user needs to choose the calculation method and the necessary parameter from literature
+Based on the specific pathogen, the user needs to choose the calculation method and the necessary parameter from literature.
 
 .. figure:: ./figures/DoseResponse.PNG
    :width: 800px
    :align: center
 
+Output - QMRA calculation
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The output of the QMRA calculation are two maps (.netcdf) of the flood area, indicating the infection risk for children and adults. Furthermore, a histogram is saved to the output folder, showing the number of children and adults in different risk classes.   
 
 	
 
