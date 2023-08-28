@@ -4,10 +4,10 @@ Introduction to the Floods and Health Tool
 What is The Floods and Health Tool?
 ----------------------
 
-The Floods and Health tool is capable of simulating the infection risk of specific waterborne diseases in a population that is exposed to floodings. 
+The Floods and Health tool is capable of simulating the infection risk of specific waterborne diseases in a population that is exposed to floods. 
 It performs spatial analysis of floods and population density data in order to identify areas and exposure groups (children/adults) that are at risk of infection through pathogens in the floodwater. 
 The aim of the tool is to show the distribution of the population in areas affected by floods, and how different flood levels are likely to affect the risk of infection with a given pathogen for different exposure groups. 
-The infection risk and burden of disease are calculated using a Quantitative microbial risk assessment (QMRA) approach. 
+The infection risk and likeliness to get ill are calculated using a Quantitative microbial risk assessment (QMRA) approach. 
 
 .. figure:: ./figures/WorkflowFloodshealth.jpg
    :width: 900px
@@ -19,11 +19,11 @@ The infection risk and burden of disease are calculated using a Quantitative mic
 Why the Floods and Health Tool?
 --------------------------
 
-Floods can have significant effects on public health, which include direct injuries, destructed health infrastructures, mental health issues and the spread of water or vector-borne diseases. 
+Floods can have significant effects on public health, which include direct injuries, destructed health infrastructures, mental health issues and the spread of water or vector-borne diseases through the floodwater. 
 These consequences on human well-being can be assessed by incorporating health impacts into flood modelling to allow a comprehensive risk assessment by understanding potential hazards, vulnerabilities and exposures. 
 This can be done by identifying high risk areas and exposure groups, as well as response strategies and interventions to reduce the risk of infection and disease transmission.
 
-The Floods and Health Tool aims to map out the flooded population and available vulnerability factors (age, sex) to identify risk areas during the flooding. 
+The Floods and Health Tool aims to map out the flooded population and available vulnerability factors (such as age, sex, social status) to identify risk areas during the flooding. 
 By using the Quantitative Microbial Risk Assessment (QMRA) approach, the tool forecasts the infection risk for persons affected by flooding for specific pathogens responsible for the outbreak of water-borne diseases.
 
 We have two goals:
@@ -38,10 +38,10 @@ The model can be used to determine the number of persons that potentially will g
 What's behind the Floods and Health Tool? 
 ----------
 
-The tool uses the flood maps produced by SFINCS and WFLOW as part of the HydroMT package and transforms it into the requested format for the health assessment.
+The tool uses the flood maps produced by SFINCS and WFLOW as part of the HydroMT package, as well as demographic data from the WorldPop Database (https://hub.worldpop.org/) and transforms it into the requested format for the health assessment.
 
 Ideally, the input data includes the severity (depth, area) and duration of the flood, 
-as well as demographic information about the affected population (age, social status, pre-existing health conditions) and critical (health) infrastructure.
+as well as demographic information about the affected population (population density, age, social status, pre-existing health conditions) and critical (health) infrastructure.
 
 
 .. figure:: ./figures/DataStreamFloodsandHealth.jpg
@@ -70,8 +70,7 @@ QMRA (Quantitative Microbial Risk Assessment)?
 
 QMRA (Quantitative Microbial Risk Assessment) models are often used to estimate the risk of disease transmission through the consumption of contaminated food or water. 
 It is a risk assessment tool that estimates the risk of disease transmission from exposure to a specific dose of pathogens. 
-In the context of food and water, QMRA can be used to estimate the number of people who will become ill after consuming a contaminated food or water product (Haas et al., 2014). 
-QMRA can be used to estimate the number of people who will become ill (Daniels et al., 2018). 
+In the context of food and water, QMRA can be used to estimate the number of people who will become ill after consuming a contaminated food or water product (Haas et al., 2014; Daniels et al., 2018). 
 
 .. figure:: ./figures/QMRA_model.jpg
    :width: 900px
@@ -81,29 +80,31 @@ QMRA can be used to estimate the number of people who will become ill (Daniels e
 Calculation steps 
 -----
 
-A Quantitative Microbial Risk Assessment (QMRA) typically involves several parameters that are used to estimate the risk of infection from exposure to microorganisms 
-in water or food. The four key steps and parameters are explained below. 
+A Quantitative Microbial Risk Assessment (QMRA) typically involves several parameters that are used to estimate the risk of infection from exposure to microorganisms in water or food. The four key steps and parameters are explained below. 
 
 1.	Hazard – Pathogen concentrations (CPathogen_floodwater)
 ------------------
 
 This parameter represents the target pathogen and its concentration of the microorganism in the water or food source. 
 It is typically estimated using laboratory analysis of water or food samples.
-Alternatively, concentrations of pathogens can be derived from modeling outputs (e.g., DeWAQ) or the literature (e.g., from Addison-Atkinson et al., 2022).  
+Alternatively, concentrations of pathogens can be derived from modeling outputs (e.g., DeWAQ) or the literature (e.g., from Addison-Atkinson et al., 2022). 
 
 2.	Exposure Assessment 
 ---------------------
 
+The exposure assessment ultimately aimes to calculate the Dose (D) of pathogens that a person may ingest through interaction with the floodwater. It includes factors such as the route of exposure, frequency and duration of exposure as well as the susceptibility/vulnerability of the population. 
+There are many ways to assess the exposure, e.g., by modelling, conducting interviews with the inhabitants or based on previous research (Eregno, 2016; Mark et al., 2018; Katukiza et al., 2014). Often used parameters are the Volume of ingestion, route/duration/frequency of exposure and the host susceptibility.  Below you can find some examples of how different studies calculate the exposure. 
 
-The exposure assessment includes factors such as the pathway, frequency and duration of exposure as well as the susceptibility/vulnerability of the population. 
-There are many ways to assess the exposure, e.g., by modelling, interviews with the inhabitants or based on previous research (Eregno, 2016; Mark et al., 2018; Katukiza et al., 2014). 
+.. figure:: ./figures/Figure_Exposure1.png
+   :width: 900px
+   :align: center
 
 Volume of ingestion (Vtotal_ingested)
 ^^^^^^^^^^^^^^^^^^^^
 
-
-The calculations of the Volume of Exposure (V total ) can consist of several parameters such as the route of exposure (ingestion, inhalation, dermal), 
+The calculations of the Volume of Exposure (V_total ) can consist of several parameters such as the route of exposure (ingestion, inhalation, dermal), 
 amount of exposure (e.g., drinking, swimming), frequency and duration of exposure and host susceptibility (e.g., children, adults). 
+
 
 Routes of exposure: 
 ^^^^^^^^^^^^^^^^^^^^
@@ -122,7 +123,7 @@ There are several sources:
 Exposure duration
 ^^^^^^^^^^^^^^^^^^
 
-This parameter represents the length of time that an individual is exposed to the microorganism. This data can be derived from questionnaires answered by the local population or in literature (Mark et al., 2014).
+This parameter represents the length of time that an individual is exposed to the microorganism. This data can be derived from questionnaires answered by the local population or from literature (Mark et al., 2014).
 
 Exposure frequency: 
 ^^^^^^^^^^
